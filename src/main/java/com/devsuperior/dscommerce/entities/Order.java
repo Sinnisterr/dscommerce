@@ -83,11 +83,10 @@ public class Order {
         return items.stream().map(x -> x.getProduct()).toList();
     }
 
-
     @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
+    public final boolean equals(Object o) {
+        if (!(o instanceof Order order)) return false;
+
         return Objects.equals(id, order.id);
     }
 
