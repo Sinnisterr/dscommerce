@@ -15,7 +15,10 @@ public class User {
     private Long id;
 
     private String name;
+
+    @Column(unique = true) // na hora de ser convertido apra banco relacional essa coluna vai ser unica(nao vai ter repeticao pra ela)
     private String email;
+
     private String phone;
     private LocalDate birthDate;
     private String password;
