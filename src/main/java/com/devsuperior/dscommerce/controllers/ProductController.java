@@ -46,6 +46,12 @@ public class ProductController {
         return ResponseEntity.ok(dto);
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        service.deleteById(id); // Se o ID não existir, uma exceção será lançada
+        return ResponseEntity.noContent().build(); // Retorna 204 se a exclusão for bem-sucedida
+    }
+
 
 
 
